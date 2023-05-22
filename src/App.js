@@ -16,7 +16,7 @@ function App() {
             <nav id="navbar" className="navbar navbar-expand-lg navbar-light bg-light fixed-top">
                 <div className="container-fluid">
                     {/* eslint-disable-next-line jsx-a11y/anchor-is-valid */}
-                    <a className="navbar-brand" href="#">Sommaire des Exercices</a>
+                    <a className="navbar-brand" href="#">Sommaire des Exercices du TP3</a>
                     <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                         <span className="navbar-toggler-icon"></span>
                     </button>
@@ -132,10 +132,10 @@ function App() {
             <br/>
             <h4 className="mb-3">Question 5: Pour chacun des cas donnés ci-dessous, remplacez le bloc (redirections)
               de la commande suivante, afin que la sortie contienne 1 la ou les lignes attendues données (faites attention aux permissions) :</h4>
-            <p className="answer-highlight">Réponse : <pre><code>{`a) ls -l --time-style=+ /proc/self/fd/ 0&lt;/tmp/toto
+            <p className="answer-highlight">Réponse : <pre><code>{`a) ls -l --time-style=+ /proc/self/fd/ 0</tmp/toto
     b) ln -s /proc/self/fd/ /tmp/toto
-    c) ls -l --time-style=+ /proc/self/fd/ 2&gt;/tmp/toto
-    d) ls -l --time-style=+ /proc/self/fd/ 0&lt;/tmp/toto 2&gt;/tmp/toto 3&lt;&gt;/tmp/toto 4&lt;/tmp/tata 5&gt;/tmp/toto`}</code></pre></p>
+    c) ls -l --time-style=+ /proc/self/fd/ 2>/tmp/toto
+    d) ls -l --time-style=+ /proc/self/fd/ 0</tmp/toto 2>/tmp/toto 3<>/tmp/toto 4</tmp/tata 5>/tmp/toto`}</code></pre></p>
           </li>
         </ul>
         <div id="Exercice2" className="mt-5 pt-5">
@@ -152,12 +152,12 @@ function App() {
               tube peut être créé préalablement via la commande mkfifo (tube nommé).
               La commande seq peut également s’avérer utile.
             </h4>
-            <p className="answer-highlight">Réponse : Voir script <a href="./Scripts/prodcons.sh" download>prodcons.sh</a> </p>
+            <p className="answer-highlight">Réponse : Voir script <a href="https://raw.githubusercontent.com/MalikSploit/tp3_se/main/src/Scripts/prodcons.sh" download>prodcons.sh</a> </p>
               <br/>
             <h4 className="mb-3">Question 2: Modifiez votre script pour que tous les messages (pas les tâches envoyées
               dans le tube) soient affichés sur la sortie standard du script.
             </h4>
-            <p className="answer-highlight">Réponse : Voir script <a href="./Scripts/prodcons2.sh" download>prodcons2.sh</a></p>
+            <p className="answer-highlight">Réponse : Voir script <a href="https://raw.githubusercontent.com/MalikSploit/tp3_se/main/src/Scripts/prodcons2.sh" download>prodcons2.sh</a></p>
               <br/>
             <h4 className="mb-3">Question 3: Modifiez votre script afin que le nombre de producteurs à lancer soit
               donné en premier argument, et celui de consommateurs à lancer soit
@@ -184,8 +184,8 @@ function App() {
                     argument du script. Pour réaliser cela, vous pourrez, par exemple, utiliser un fichier temporaire
                     (c.f. mktemp).
                 </h4>
-                <p className="answer-highlight">Réponse : Voir script <a href="./Scripts/ecrivain.sh" download>ecrivain.sh</a></p>
-                <p className="answer-highlight">Réponse : Voir script <a href="./Scripts/lecteur.sh" download>lecteur.sh</a></p>
+                <p className="answer-highlight">Réponse : Voir script <a href="https://raw.githubusercontent.com/MalikSploit/tp3_se/main/src/Scripts/ecrivain.sh" download>ecrivain.sh</a></p>
+                <p className="answer-highlight">Réponse : Voir script <a href="https://raw.githubusercontent.com/MalikSploit/tp3_se/main/src/Scripts/lecteur.sh" download>lecteur.sh</a></p>
                 <br/>
                 <h4 className="mb-3">Question 2: Les deux scripts ecrivain.sh et lecteur.sh peuvent-ils être en concurrence ? Y-a-t-il une ressource critique ? Si oui, réalisez un scénario montrant
                     un résultat incohérent (pour cela, vous pouvez tricher, en ralentissant
@@ -193,22 +193,22 @@ function App() {
                     adéquates, par exemple).
                 </h4>
                 <p className="answer-highlight">Réponse : Oui, les scripts ecrivain.sh et lecteur.sh peuvent entrer en concurrence s'ils sont exécutés simultanément sur le même fichier. La ressource critique dans ce cas est le fichier sur lequel les deux scripts opèrent. Si ecrivain.sh commence à modifier le fichier alors que lecteur.sh lit le fichier, cela peut entraîner un comportement inattendu. Par exemple, lecteur.sh pourrait lire une version partielle ou inconsistante du fichier.</p>
-                <p className="answer-highlight">Réponse : Voir script <a href="./Scripts/ecrivain2.sh" download>ecrivain2.sh</a></p>
-                <p className="answer-highlight">Réponse : Voir script <a href="./Scripts/lecteur2.sh" download>lecteur2.sh</a></p>
+                <p className="answer-highlight">Réponse : Voir script <a href="https://raw.githubusercontent.com/MalikSploit/tp3_se/main/src/Scripts/ecrivain2.sh" download>ecrivain2.sh</a></p>
+                <p className="answer-highlight">Réponse : Voir script <a href="https://raw.githubusercontent.com/MalikSploit/tp3_se/main/src/Scripts/lecteur2.sh" download>lecteur2.sh</a></p>
                 <br/>
                 <h4 className="mb-3">Question 3: Écrire un script lecteur-ecrivain.sh qui lance, en arrière plan, e écrivains et l lecteurs, tous appelés sur un même fichier f où e, l et f sont
                     respectivement donnés en premier, deuxième et troisième argument du
                     script. Une fois lancé, le script attendra que tous (lecteurs et écrivains)
                     finissent. Testez. Constatez-vous des résultats incohérents ?
                 </h4>
-                <p className="answer-highlight">Réponse : Voir script <a href="./Scripts/lecteur-ecrivain.sh" download>lecteur-ecrivain.sh</a></p>
+                <p className="answer-highlight">Réponse : Voir script <a href="https://raw.githubusercontent.com/MalikSploit/tp3_se/main/src/Scripts/lecteur-ecrivain.sh" download>lecteur-ecrivain.sh</a></p>
                 <br/>
                 <h4 className="mb-3">Question 4: Rétablissez la cohérence à coup sûr, en utilisant l’outil de verrouillage
                     à double phase (c.f. cours) flock (c.f. man flock aussi). Avec quelle
                     option doit-il être appelé dans lecteur.sh ? Dans ecrivain.sh ?
                 </h4>
-                <p className="answer-highlight">Réponse : Voir script <a href="./Scripts/lecteur3.sh" download>lecteur3.sh</a></p>
-                <p className="answer-highlight">Réponse : Voir script <a href="./Scripts/ecrivain3.sh" download>ecrivain3.sh</a></p>
+                <p className="answer-highlight">Réponse : Voir script <a href="https://raw.githubusercontent.com/MalikSploit/tp3_se/main/src/Scripts/lecteur3.sh" download>lecteur3.sh</a></p>
+                <p className="answer-highlight">Réponse : Voir script <a href="https://raw.githubusercontent.com/MalikSploit/tp3_se/main/src/Scripts/ecrivain3.sh" download>ecrivain3.sh</a></p>
                 <br/>
                 <h4 className="mb-3">Question 5: À l’aide de la commande sleep .$RANDOM, qui force une pause d’une
                     durée aléatoire inférieure à 1 seconde, différez aléatoirement le lancement
@@ -216,7 +216,7 @@ function App() {
                     également chacun par un numéro, et faites-en sorte qu’il affiche des
                     messages concernant les opérations qu’ils réalisent sur l’erreur standard.
                 </h4>
-                <p className="answer-highlight">Réponse : Voir script <a href="./Scripts/lecteur-ecrivain2.sh" download>lecteur-ecrivain2.sh</a></p>
+                <p className="answer-highlight">Réponse : Voir script <a href="https://raw.githubusercontent.com/MalikSploit/tp3_se/main/src/Scripts/lecteur-ecrivain2.sh" download>lecteur-ecrivain2.sh</a></p>
                 <p className="answer-highlight">Réponse : Doit etre utilisé avec lecteur.sh et ecrivain.sh</p>
             </li>
         </ul>
@@ -229,7 +229,7 @@ function App() {
                         près) toutes les 5 secondes (dans une boucle infinie), après avoir affiché
                         son pid.
                     </h4>
-                    <p className="answer-highlight">Réponse : Voir script <a href="./Scripts/ilestquelleheure.sh" download>ilestquelleheure.sh</a></p>
+                    <p className="answer-highlight">Réponse : Voir script <a href="https://raw.githubusercontent.com/MalikSploit/tp3_se/main/src/Scripts/ilestquelleheure.sh" download>ilestquelleheure.sh</a></p>
                     <br/>
                     <h4 className="mb-3">Question 2: Exécutez le script et envoyez-lui le signal SIGUSR1. Que se passe-t-il ? Tuez
                         le processus s’il est encore en vie.
@@ -241,7 +241,7 @@ function App() {
                         de la forme : "Vous demandez l'heure ? La voici : 09:45:38". Le script
                         devra ensuite se remettre en attente. Testez. L’effet est-il immédiat ?
                     </h4>
-                    <p className="answer-highlight">Réponse : Voir script <a href="./Scripts/ilestquelleheure2.sh" download>ilestquelleheure2.sh</a></p>
+                    <p className="answer-highlight">Réponse : Voir script <a href="https://raw.githubusercontent.com/MalikSploit/tp3_se/main/src/Scripts/ilestquelleheure2.sh" download>ilestquelleheure2.sh</a></p>
                     <p className="answer-highlight">Réponse : L'effet de l'action définie par trap sera immédiat lors de la reception du signal SIGUSR1 cependant si le script est en train de dormir avec la commande sleep, il ne réagira pas immédiatement, mais seulement apres avoir termine le delai de sommeil en cours. On peut le tester on faisant : kill -SIGUSR1 [PID du processus]</p>
                     <br/>
                     <h4 className="mb-3">Question 4: La commande sleep masque les signaux tant qu’elle s’exécute, d’où un
@@ -249,19 +249,19 @@ function App() {
                         inintéressant. Fort heureusement, la commande wait, elle, ne masque pas
                         les signaux. Modifiez votre script, afin que l’effet de SIGUSR1 soit immédiat.
                     </h4>
-                    <p className="answer-highlight">Réponse : Voir script <a href="./Scripts/ilestquelleheure4.sh" download>ilestquelleheure4.sh</a></p>
+                    <p className="answer-highlight">Réponse : Voir script <a href="https://raw.githubusercontent.com/MalikSploit/tp3_se/main/src/Scripts/ilestquelleheure4.sh" download>ilestquelleheure4.sh</a></p>
                     <p className="answer-highlight">Réponse : En utilisant read -t 0, nous permettons à read de vérifier régulièrement s'il y a un signal à traiter sans délai supplémentaire, ce qui garantit une réponse immédiate à la réception de SIGUSR1. DOnc si on envoit le signal SIGUSR1 avec kill -SIGUSR1 [PID du processus], il affichera immédiatement un message avec l'heure actuelle.</p>
                     <br/>
                     <h4 className="mb-3">Question 5: Interceptez le signal SIGUSR2 afin que le processus redonne son pid avant
                         de continuer (en reprenant le délai à 0). . .
                     </h4>
-                    <p className="answer-highlight">Réponse : Voir script <a href="./Scripts/ilestquelleheure4.sh" download>ilestquelleheure4.sh</a></p>
+                    <p className="answer-highlight">Réponse : Voir script <a href="https://raw.githubusercontent.com/MalikSploit/tp3_se/main/src/Scripts/ilestquelleheure4.sh" download>ilestquelleheure4.sh</a></p>
                     <p className="answer-highlight">Réponse : Maintenant, lorsque nous envoyons le signal SIGUSR2 au script, il affichera immédiatement son PID avant de continuer l'exécution avec le délai à zéro.</p>
                     <h4 className="mb-3">Question 6: Interceptez le signal SIGQUIT (qui peut être envoyé au processus de premier
                         plan via la combinaison ctrl+\) afin qu’un message indique à quelle heure
                         le processus a terminé, avant de terminer.
                     </h4>
-                    <p className="answer-highlight">Réponse : Voir script <a href="./Scripts/ilestquelleheure5.sh" download>ilestquelleheure5.sh</a></p>
+                    <p className="answer-highlight">Réponse : Voir script <a href="https://raw.githubusercontent.com/MalikSploit/tp3_se/main/src/Scripts/ilestquelleheure5.sh" download>ilestquelleheure5.sh</a></p>
                     <p className="answer-highlight">Réponse : Maintenant, lorsque nous envoyons le signal SIGQUIT au script (en utilisant la combinaison Ctrl+), il affichera immédiatement un message indiquant l'heure à laquelle le processus a terminé avant de se terminer lui-même.</p>
                 </li>
             </ul>
@@ -272,7 +272,7 @@ function App() {
               <li>
                   <h4 className="mb-3">Question 1: Écrivez un script bash interpreter.sh qui est un interpréteur de commande basique. Testez. Comment pouvez-vous quitter l’interpréteur ?
                   </h4>
-                  <p className="answer-highlight">Réponse : Voir script <a href="./Scripts/interpreter.sh" download>interpreter.sh</a></p>
+                  <p className="answer-highlight">Réponse : Voir script <a href="https://raw.githubusercontent.com/MalikSploit/tp3_se/main/src/Scripts/interpreter.sh" download>interpreter.sh</a></p>
                   <p className="answer-highlight">Réponse :
                       <ol>
                           <li>
@@ -294,7 +294,7 @@ function App() {
                   <h4 className="mb-3">Question 2: Modifiez l’interpréteur pour qu’après l’exécution d’une commande, la
                       variable $status contienne le code de retour de cette commande. Testez.
                   </h4>
-                  <p className="answer-highlight">Réponse : Voir script <a href="./Scripts/interpreter2.sh" download>interpreter2.sh</a></p>
+                  <p className="answer-highlight">Réponse : Voir script <a href="https://raw.githubusercontent.com/MalikSploit/tp3_se/main/src/Scripts/interpreter2.sh" download>interpreter2.sh</a></p>
                   <br/>
                   <h4 className="mb-3">Question 3: La commande trap permet de définir le comportement à adopter à
                       la réception d’un signal donné. À l’aide de cette commande, faites en
@@ -303,7 +303,7 @@ function App() {
                       notre interpréteur, l’envoie du signal SIGINT (via Ctrl + c ) tuera cette
                       commande couramment interprétée mais pas notre interpréteur
                   </h4>
-                  <p className="answer-highlight">Réponse : Voir script <a href="./Scripts/interpreter3.sh" download>interpreter3.sh</a></p>
+                  <p className="answer-highlight">Réponse : Voir script <a href="https://raw.githubusercontent.com/MalikSploit/tp3_se/main/src/Scripts/interpreter3.sh" download>interpreter3.sh</a></p>
                   <p className="answer-highlight">Réponse : Avec cette modification, le signal SIGINT (envoyé via Ctrl+C) sera ignoré par l'interpréteur. Lorsque nous exécutons une commande comme sleep 180 dans l'interpréteur et appuyons sur Ctrl+C pendant son exécution, la commande sera interrompue comme d'habitude, mais l'interpréteur continuera à s'exécuter normalement sans être affecté par le signal SIGINT.</p>
               </li>
           </ul>
