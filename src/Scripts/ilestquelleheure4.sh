@@ -23,5 +23,5 @@ while true; do
   fi
 
   # Attend 5 secondes
-  sleep 5
+  sleep 5 & wait
 done

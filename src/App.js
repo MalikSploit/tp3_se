@@ -249,7 +249,7 @@ function App() {
                         inintéressant. Fort heureusement, la commande wait, elle, ne masque pas
                         les signaux. Modifiez votre script, afin que l’effet de SIGUSR1 soit immédiat.
                     </h4>
-                    <p className="answer-highlight">Réponse : Voir script <a href="https://raw.githubusercontent.com/MalikSploit/tp3_se/main/src/Scripts/ilestquelleheure4.sh" download>ilestquelleheure4.sh</a></p>
+                    <p className="answer-highlight">Réponse : Voir script <a href="https://raw.githubusercontent.com/MalikSploit/tp3_se/main/src/Scripts/ilestquelleheure3.sh" download>ilestquelleheure3.sh</a></p>
                     <p className="answer-highlight">Réponse : En utilisant read -t 0, nous permettons à read de vérifier régulièrement s'il y a un signal à traiter sans délai supplémentaire, ce qui garantit une réponse immédiate à la réception de SIGUSR1. DOnc si on envoit le signal SIGUSR1 avec kill -SIGUSR1 [PID du processus], il affichera immédiatement un message avec l'heure actuelle.</p>
                     <br/>
                     <h4 className="mb-3">Question 5: Interceptez le signal SIGUSR2 afin que le processus redonne son pid avant
